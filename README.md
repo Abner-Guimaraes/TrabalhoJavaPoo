@@ -15,7 +15,7 @@ Para refletir a estrutura da tabela no banco de dados MySQL na interface gráfic
 2. **Name:** Nome do produto.
 3. **Short Description:** Descrição do produto.
 4. **Category:** Categoria do produto.
-5. **brand:** Marca do produto.
+5. **Brand:** Marca do produto.
 6. **Cost:** Preço do produto.
 7. **List price:** Preço recomendado do produto.
 
