@@ -13,7 +13,7 @@ Para refletir a estrutura da tabela no banco de dados MySQL na interface gráfic
 
 1. **Id:** Identificador único do produto (chave primária).
 2. **Name:** Nome do produto.
-3. **Descricao:** Descrição do produto.
+3. **Short Description:** Descrição do produto.
 4. **Category:** Categoria do produto.
 5. **brand:** Marca do produto.
 6. **Cost:** Preço do produto.
