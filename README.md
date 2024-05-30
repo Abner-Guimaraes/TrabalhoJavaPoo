@@ -20,3 +20,11 @@ Antes de executar o projeto, certifique-se de ter os seguintes softwares instala
 - **MySQL**
 - **Maven** (opcional, para gerenciamento de dependências)
 - **IDE** (como IntelliJ IDEA, Eclipse, etc.)
+
+## Branches do Repositório
+Este repositório possui as seguintes branches:
+1. **main**: Contém o trabalho principal. As outras branches serão mescladas aqui no final do projeto.
+2. **TOO-2-Interface-Gráfica**: Contém os códigos em JavaFX da interface gráfica.
+3. **TOO-3-MySQL**: Contém os códigos SQL para criação e manipulação da tabela de produtos no banco de dados.
+4. **TOO-22-Back-endIG**: Contém os códigos para a conexão do banco de dados com a tabela e as funções CRUD.
+
