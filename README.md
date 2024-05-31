@@ -15,7 +15,7 @@ O objetivo desta branch é desenvolver e iterar sobre a interface gráfica da ap
 
 ## Contribuições
 
-Contribuições para esta branch devem estar alinhadas com o desenvolvimento da interface gráfica da aplicação. Isso inclui adição de código, correções de bugs relacionados à interface e melhorias na experiência do usuário.
+Contribuições para esta branch devem estar alinhadas com o desenvolvimento da interface gráfica da aplicação. Incluindo adição de código, correções de bugs relacionados à interface e melhorias na experiência do usuário.
 
 ## Diretrizes de Fusão
 
