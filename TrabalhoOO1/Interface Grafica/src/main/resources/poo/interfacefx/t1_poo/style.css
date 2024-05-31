@@ -1,0 +1,72 @@
+.root{
+    -fx-background-color: #dadada;
+    -fx-font-family: sans-serif;
+}
+/* Estilo para as labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.button {
+    -fx-background-radius: 5px;
+    -fx-background-color: #5c9ede;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+
+.text-field {
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused {
+    -fx-focus-color: #5c9ede;
+}
+
+/* Estilo para a tabela */
+.table-view {
+    -fx-font-size: 12px;
+    -fx-background-radius: 100px;
+    -fx-background-color: #dbdcdc;
+}
+
+.table-view .column-header {
+    -fx-background-color: #b6c4cc;
+}
+
+.table-view .table-cell {
+    -fx-background-color: #e6eaec;
+}
+
+.table-row-cell:hover{
+    -fx-border-color: #5c9ede;
+}
+
+.table-view .table-cell:even {
+    -fx-background-color:  #ccd2d9;
+}
+
+.pagination {
+    -fx-font-size: 14px;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+
+

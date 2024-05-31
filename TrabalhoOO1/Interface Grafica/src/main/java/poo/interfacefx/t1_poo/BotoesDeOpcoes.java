@@ -5,14 +5,24 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 
 public class BotoesDeOpcoes extends HBox {
-    private Button atualizarBtn, deletarBtn;
+    private final Button atualizarBtn, deletarBtn;
 
     public BotoesDeOpcoes(Produtos produto){
         this.atualizarBtn = new Button("Atualizar");
         this.deletarBtn = new Button("Deletar");
 
-        atualizarBtn.setOnAction(e -> System.out.println("clicou em adicionar!"));
-        deletarBtn.setOnAction(e -> System.out.println("clicou em deletar!"));
+        atualizarBtn.setStyle("-fx-text-fill: #fff;-fx-background-color: DodgerBlue;"
+               + "-fx-font-weight: bold; -fx-cursor: hand;");
+        deletarBtn.setStyle("-fx-text-fill: #fff;-fx-background-color: Crimson;"
+                + "-fx-font-weight: bold; -fx-cursor: hand;");
+
+        atualizarBtn.setOnAction(e -> {
+            BotoesModal.updateModal("Atualizar");
+        });
+
+        deletarBtn.setOnAction(e -> {
+            BotoesModal.deleteModal("Deletar");
+        });
 
         setSpacing(10);
         setAlignment(Pos.CENTER);
