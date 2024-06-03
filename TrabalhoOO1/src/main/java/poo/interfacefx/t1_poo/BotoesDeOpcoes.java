@@ -16,11 +16,11 @@ public class BotoesDeOpcoes extends HBox {
         deletarBtn.setStyle("-fx-text-fill: #fff;-fx-background-color: Crimson;"
                 + "-fx-font-weight: bold; -fx-cursor: hand;");
 
-        atualizarBtn.setOnAction(_ -> {
+        atualizarBtn.setOnAction(e -> {
             BotoesModal.updateModal("Atualizar");
         });
 
-        deletarBtn.setOnAction(_ -> {
+        deletarBtn.setOnAction(e -> {
             BotoesModal.deleteModal("Deletar");
         });
 

@@ -22,8 +22,8 @@ public class BotoesModal {
         Button simBtn = new Button("sim");
         Button naoBtn = new Button("não");
 
-        simBtn.setOnAction(_ -> System.out.println("Atualiza o arquivo!"));
-        naoBtn.setOnAction(_ -> modal.close());
+        simBtn.setOnAction(e -> System.out.println("Atualiza o arquivo!"));
+        naoBtn.setOnAction(e -> modal.close());
 
         HBox btnContainer = new HBox();
         btnContainer.setSpacing(15);
@@ -50,8 +50,8 @@ public class BotoesModal {
         Button simBtn = new Button("sim");
         Button naoBtn = new Button("não");
 
-        simBtn.setOnAction(_ -> System.out.println("Deleta o arquivo!"));
-        naoBtn.setOnAction(_ -> modal.close());
+        simBtn.setOnAction(e -> System.out.println("Deleta o arquivo!"));
+        naoBtn.setOnAction(e -> modal.close());
 
         HBox btnContainer = new HBox();
         btnContainer.setSpacing(15);
