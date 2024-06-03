@@ -8,10 +8,16 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+
+import java.util.Objects;
 
 public class ScreenFx extends Application {
 
@@ -143,16 +149,18 @@ public class ScreenFx extends Application {
         tela = stage;
         tela.setTitle("Trabalho 1 Poo");
         Scene scene = new Scene(grid, 1024, 600);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        Image icone = new Image(Objects.requireNonNull(getClass().getResource("POO_icon.png")).toExternalForm());
+        tela.getIcons().add(icone);
         tela.setScene(scene);
         tela.show();
     }
 
     private static TableColumn<Produtos, String> getProdutosStringTableColumn(String Nome, String nome) {
-        TableColumn<Produtos, String> nomeCol = new TableColumn<>(Nome);
-        nomeCol.setMinWidth(100);
-        nomeCol.setCellValueFactory(new PropertyValueFactory<>(nome));
-        nomeCol.setCellFactory(_ -> new TableCell<>() {
+        TableColumn<Produtos, String> auxCol = new TableColumn<>(Nome);
+        auxCol.setMinWidth(100);
+        auxCol.setCellValueFactory(new PropertyValueFactory<>(nome));
+        auxCol.setCellFactory(_ -> new TableCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
@@ -161,12 +169,12 @@ public class ScreenFx extends Application {
                     setGraphic(null);
                 } else {
                     Text text = new Text(item);
-                    text.wrappingWidthProperty().bind(nomeCol.widthProperty());
+                    text.wrappingWidthProperty().bind(auxCol.widthProperty().subtract(5));
                     setGraphic(text);
                 }
             }
         });
-        return nomeCol;
+        return auxCol;
     }
 
     private Node criarPagina(int paginaIdx) {
@@ -174,7 +182,6 @@ public class ScreenFx extends Application {
         int paraIndex = Math.min(doIndex + LINHAS_POR_PAGINA, getProdutos().size());
         tabela.setItems(FXCollections.observableArrayList(getProdutos().
                 subList(doIndex, paraIndex)));
-        tabela.setSelectionModel(null);
         return new BorderPane(tabela);
     }
 

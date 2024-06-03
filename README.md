@@ -1,6 +1,6 @@
 # Branch TOO-2-Interface-Gráfica
 
-Esta branch foi criada como parte do projeto de Programação Orientada a Objetos (POO), especificamente para trabalhar na implementação da interface gráfica da aplicação.
+Esta branch foi criada como parte do projeto de Programação Orientada a Objetos (POO), especificamente para trabalhar na implementação da interface gráfica da aplicação
 
 ## Objetivo
 

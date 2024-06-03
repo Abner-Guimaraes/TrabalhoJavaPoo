@@ -1,0 +1,123 @@
+/* Estilo geral */
+.root{
+    -fx-background-color: #dadada;
+    -fx-font-family: sans-serif;
+}
+
+/* Estilo para as labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+/* Estilo para os botoes */
+.button {
+    -fx-background-radius: 5px;
+    -fx-background-color: #5c9ede;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+
+/* Estilo para o input de texto */
+.text-field {
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused {
+    -fx-focus-color: #5c9ede;
+}
+
+/* Estilo para a tabela */
+.table-view {
+    -fx-font-size: 12px;
+    -fx-background-color: #dbdcdc;
+}
+
+.table-view .column-header {
+    -fx-background-color: #b6c4cc;
+    -fx-font-weight: bold;
+}
+
+.table-cell {
+    -fx-background-color: #e6eaec;
+    -fx-border-color: #b6c4cc;
+    -fx-font-weight: normal;
+}
+
+.table-view .table-cell:even {
+    -fx-background-color:  #ccd2d9;
+}
+
+.table-row-cell:selected {
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #000;
+    -fx-background-color: SkyBlue;
+}
+
+.table-row-cell:selected .table-cell:even {
+    -fx-text-fill: #000;
+    -fx-background-color: SkyBlue;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical .thumb {
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #b6c4cc;
+}
+
+/* Estilo da paginação da tabela */
+.pagination {
+    -fx-font-size: 14px;
+}
+
+.pagination .pagination-control {
+    -fx-padding: 10px 0 0 0;
+    -fx-transition: none;
+}
+
+.pagination .pagination-control .button, .pagination .toggle-button {
+    -fx-background-radius: 5px;
+    -fx-min-width: 60px;
+    -fx-min-height: 20px;
+    -fx-background-color: #5c9ede;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+.pagination .pagination-control .button:selected, .pagination .toggle-button:selected {
+    -fx-background-color: DodgerBlue;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+
+.pagination .left-arrow, .right-arrow {
+    -fx-background-color: #f0f0f0;
+}
+
+
+
+
