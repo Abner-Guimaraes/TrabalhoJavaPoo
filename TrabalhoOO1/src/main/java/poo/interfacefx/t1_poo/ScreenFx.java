@@ -8,9 +8,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
@@ -21,9 +18,18 @@ import java.util.Objects;
 
 public class ScreenFx extends Application {
 
-    Stage tela;
-    TableView<Produtos> tabela;
+    private Stage tela;
+    private TableView<Produtos> tabela;
     private static final int LINHAS_POR_PAGINA = 10;
+    private TextField nomeInput;
+    private TextField descricaoInput;
+    private TextField marcaInput;
+    private TextField categoriaInput;
+    private TextField precoInput;
+    private TextField custoInput;
+    private TextField buscaInput;
+    private ProdutosControlador produtosControlador;
+    private Pagination paginacao;
 
     public static void main(String[] args) {
         launch(args);
@@ -31,6 +37,7 @@ public class ScreenFx extends Application {
 
     @Override
     public void start(Stage stage) {
+        produtosControlador = new ProdutosControlador();
 
         // Criacao do GridPane.
         GridPane grid = new GridPane();
@@ -40,42 +47,48 @@ public class ScreenFx extends Application {
 
         // Nome do produto.
         Label nomeLabel = new Label("Nome");
-        TextField nomeInput = new TextField();
+        nomeInput = new TextField();
         nomeInput.setPromptText("Nome do produto");
 
         // Descricao do produto.
         Label descricaoLabel = new Label("Descrição");
-        TextField descricaoInput = new TextField();
+        descricaoInput = new TextField();
         descricaoInput.setPromptText("Descrição do produto");
 
         // Marca do produto.
         Label marcaLabel = new Label("Marca");
-        TextField marcaInput = new TextField();
+        marcaInput = new TextField();
         marcaInput.setPromptText("Marca do produto");
 
         // Categoria do produto.
         Label categoriaLabel = new Label("Categoria");
-        TextField categoriaInput = new TextField();
+        categoriaInput = new TextField();
         categoriaInput.setPromptText("Categoria do produto");
 
         // Preco do produto.
         Label precoLabel = new Label("Lista de Preço");
-        TextField precoInput = new TextField();
+        precoInput = new TextField();
         precoInput.setPromptText("Lista de preço produto");
 
         // Categoria do produto.
         Label custoLabel = new Label("Custo");
-        TextField custoInput = new TextField();
+        custoInput = new TextField();
         custoInput.setPromptText("Custo do produto");
 
         // Botoes de criar.
         Button criarBtn = new Button("Criar");
+        criarBtn.setOnAction(_ -> {
+            produtosControlador.criarProduto(nomeInput, descricaoInput, marcaInput,
+                    categoriaInput, precoInput, custoInput, tabela);
+            atualizarPaginacao();
+        });
 
         // Filtro de nome.
-        TextField buscaInput = new TextField();
+        buscaInput = new TextField();
         buscaInput.setPromptText("Pesquisar...");
         buscaInput.setPrefWidth(500);
         Button buscaBtn = new Button("Buscar");
+        buscaBtn.setOnAction(_ -> atualizarPaginacao());
 
         // Container do botao buscar.
         HBox buscaContainer = new HBox();
@@ -123,23 +136,19 @@ public class ScreenFx extends Application {
         opcoesCol.setMinWidth(175);
         opcoesCol.setCellValueFactory(celldata -> {
             Produtos produto = celldata.getValue();
-            return new SimpleObjectProperty<>(new BotoesDeOpcoes(produto));
+            return new SimpleObjectProperty<>(new BotoesDeOpcoes(produto, this));
         });
 
         // Adicionando itens na tabela.
         tabela = new TableView<>();
         tabela.setPrefWidth(776);
-        tabela.setItems(getProdutos());
+        tabela.setItems(produtosControlador.getProdutos());
         tabela.getColumns().addAll(nomeCol, descricaoCol, marcaCol, categoriaCol, precoCol,
                 custoCol, opcoesCol);
 
         // Paginacao
-        Pagination paginacao = new Pagination();
-        paginacao.setPageCount((int) Math.ceil(getProdutos().size() /
-                (double) LINHAS_POR_PAGINA));
+        paginacao = new Pagination();
         paginacao.setPageFactory(this::criarPagina);
-
-        // Adicionando a paginacao ao grid.
         GridPane.setConstraints(paginacao, 2, 1, 2, 8);
 
         // Adicionando containers ao grid.
@@ -154,6 +163,23 @@ public class ScreenFx extends Application {
         tela.getIcons().add(icone);
         tela.setScene(scene);
         tela.show();
+
+        // Atualizando a paginacao depois que a tela é inicializada
+        atualizarPaginacao();
+    }
+
+    public void atualizarProduto(boolean flag, Produtos produto, String novoNome,
+                                 String novaDescricao, String novaMarca,
+                                 String novaCategoria, double novoPreco, double novoCusto){
+
+        produtosControlador.atualizarProduto(flag, produto, novoNome, novaDescricao,
+                novaMarca, novaCategoria, novoPreco, novoCusto, tabela);
+        atualizarPaginacao();
+    }
+
+    public void deletarProduto(boolean flag, Produtos produto) {
+        produtosControlador.deletarProduto(flag, produto, tabela);
+        atualizarPaginacao();
     }
 
     private static TableColumn<Produtos, String> getProdutosStringTableColumn(String Nome, String nome) {
@@ -169,7 +195,8 @@ public class ScreenFx extends Application {
                     setGraphic(null);
                 } else {
                     Text text = new Text(item);
-                    text.wrappingWidthProperty().bind(auxCol.widthProperty().subtract(5));
+                    text.wrappingWidthProperty().bind
+                            (auxCol.widthProperty().subtract(5));
                     setGraphic(text);
                 }
             }
@@ -177,22 +204,18 @@ public class ScreenFx extends Application {
         return auxCol;
     }
 
-    private Node criarPagina(int paginaIdx) {
-        int doIndex = paginaIdx * LINHAS_POR_PAGINA;
-        int paraIndex = Math.min(doIndex + LINHAS_POR_PAGINA, getProdutos().size());
-        tabela.setItems(FXCollections.observableArrayList(getProdutos().
-                subList(doIndex, paraIndex)));
+    private Node criarPagina(int pagina) {
+        ObservableList<Produtos> produtosFiltrados = produtosControlador.filtrarProdutos(buscaInput.getText());
+        int de = pagina * LINHAS_POR_PAGINA;
+        int ate = Math.min(de + LINHAS_POR_PAGINA, produtosFiltrados.size());
+        tabela.setItems(FXCollections.observableArrayList(produtosFiltrados.subList(de, ate)));
         return new BorderPane(tabela);
     }
 
-    public ObservableList<Produtos> getProdutos() {
-        ObservableList<Produtos> produtos = FXCollections.observableArrayList();
-        for (int i = 0; i < 10; i++) {
-            produtos.add(new Produtos("Televisão", "Lorem ipsum", "Samsung",
-                    "Eletrodomesticos", 1200.00, 500.00));
-            produtos.add(new Produtos("Play Station 5", "Lorem ipsum", "Sony",
-                    "Eletrodomesticossssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", 5000.00, 2500.00));
-        }
-        return produtos;
+    private void atualizarPaginacao() {
+        ObservableList<Produtos> produtosFiltrados = produtosControlador.filtrarProdutos(buscaInput.getText());
+        int pageCount = (int) Math.ceil((double) produtosFiltrados.size() / LINHAS_POR_PAGINA);
+        paginacao.setPageCount(pageCount);
+        paginacao.setPageFactory(this::criarPagina);
     }
 }

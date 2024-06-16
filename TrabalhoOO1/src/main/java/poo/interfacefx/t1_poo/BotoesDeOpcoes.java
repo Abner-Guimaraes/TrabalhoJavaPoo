@@ -7,7 +7,7 @@ import javafx.scene.layout.HBox;
 public class BotoesDeOpcoes extends HBox {
     private final Button atualizarBtn, deletarBtn;
 
-    public BotoesDeOpcoes(Produtos produto){
+    public BotoesDeOpcoes(Produtos produto,ScreenFx screenFx){
         this.atualizarBtn = new Button("Atualizar");
         this.deletarBtn = new Button("Deletar");
 
@@ -17,11 +17,11 @@ public class BotoesDeOpcoes extends HBox {
                 + "-fx-font-weight: bold; -fx-cursor: hand;");
 
         atualizarBtn.setOnAction(_ -> {
-            BotoesModal.updateModal("Atualizar");
+            BotoesModal.updateModal("Atualizar", produto, screenFx);
         });
 
         deletarBtn.setOnAction(_ -> {
-            BotoesModal.deleteModal("Deletar");
+            screenFx.deletarProduto(BotoesModal.deleteModal("Deletar"),produto);
         });
 
         setSpacing(10);
