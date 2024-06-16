@@ -123,7 +123,7 @@ public class ScreenFx extends Application {
 
         // Coluna de Lista de Preco.
         TableColumn<Produtos, Double> precoCol = new TableColumn<>("Lista de Preço");
-        precoCol.setMinWidth(100);
+        precoCol.setMinWidth(200);
         precoCol.setCellValueFactory(new PropertyValueFactory<>("preco"));
 
         // Coluna de Custo.
@@ -141,8 +141,13 @@ public class ScreenFx extends Application {
 
         // Adicionando itens na tabela.
         tabela = new TableView<>();
+<<<<<<< HEAD
         tabela.setPrefWidth(776);
         tabela.setItems(produtosControlador.getProdutos());
+=======
+        tabela.setPrefWidth(885);
+        tabela.setItems(getProdutos());
+>>>>>>> 6b7c15b2cd10f531cfeed0bf659ec90c09b771d3
         tabela.getColumns().addAll(nomeCol, descricaoCol, marcaCol, categoriaCol, precoCol,
                 custoCol, opcoesCol);
 
@@ -157,7 +162,7 @@ public class ScreenFx extends Application {
         // Mostrando a cena na tela.
         tela = stage;
         tela.setTitle("Trabalho 1 Poo");
-        Scene scene = new Scene(grid, 1024, 600);
+        Scene scene = new Scene(grid, 1280, 720);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         Image icone = new Image(Objects.requireNonNull(getClass().getResource("POO_icon.png")).toExternalForm());
         tela.getIcons().add(icone);
@@ -186,7 +191,7 @@ public class ScreenFx extends Application {
         TableColumn<Produtos, String> auxCol = new TableColumn<>(Nome);
         auxCol.setMinWidth(100);
         auxCol.setCellValueFactory(new PropertyValueFactory<>(nome));
-        auxCol.setCellFactory(_ -> new TableCell<>() {
+        auxCol.setCellFactory(e -> new TableCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);

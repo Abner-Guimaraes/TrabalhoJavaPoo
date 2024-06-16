@@ -1,6 +1,6 @@
 # Branch TOO-2-Interface-Gráfica
 
-Esta branch foi criada como parte do projeto de Programação Orientada a Objetos (POO), especificamente para trabalhar na implementação da interface gráfica da aplicação
+Esta branch foi criada como parte do projeto de Programação Orientada a Objetos (POO), especificamente para trabalhar na implementação da interface gráfica da aplicação.
 
 ## Objetivo
 
@@ -24,3 +24,7 @@ Antes de fundir qualquer alteração nesta branch com a branch principal (normal
 ## Contato
 
 Se tiver dúvidas ou sugestões relacionadas ao desenvolvimento da interface gráfica, sinta-se à vontade para entrar em contato com a equipe de desenvolvimento responsável por esta branch.
+
+![Diagrama da Interface Gráfica (Diagrama UML)](https://github.com/Abner-Guimaraes/TrabalhoJavaPoo/blob/TOO-2-Interface-Gr%C3%A1fica/DiagramaUML/DiagramaTOO2.png)
+
+
