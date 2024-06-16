@@ -25,7 +25,6 @@ public class BotoesModal extends ScreenFx {
         mensagem.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;" +
                     "-fx-text-fill: #000000;");
 
-<<<<<<< HEAD
         TextField nomeInput = new TextField(produto.getNome());
         nomeInput.setMaxWidth(250);
         TextField descricaoInput = new TextField(produto.getDescricao());
@@ -59,10 +58,6 @@ public class BotoesModal extends ScreenFx {
             modal.close();
         });
         naoBtn.setOnAction(_ -> modal.close());
-=======
-        simBtn.setOnAction(e -> System.out.println("Atualiza o arquivo!"));
-        naoBtn.setOnAction(e -> modal.close());
->>>>>>> 6b7c15b2cd10f531cfeed0bf659ec90c09b771d3
 
 
         HBox btnContainer = new HBox(10);
@@ -93,7 +88,6 @@ public class BotoesModal extends ScreenFx {
         Button simBtn = new Button("sim");
         Button naoBtn = new Button("não");
 
-<<<<<<< HEAD
         simBtn.setOnAction(_ -> {
             flag = true;
             modal.close();
@@ -102,10 +96,6 @@ public class BotoesModal extends ScreenFx {
             flag = false;
             modal.close();
         });
-=======
-        simBtn.setOnAction(e -> System.out.println("Deleta o arquivo!"));
-        naoBtn.setOnAction(e -> modal.close());
->>>>>>> 6b7c15b2cd10f531cfeed0bf659ec90c09b771d3
 
         HBox btnContainer = new HBox();
         btnContainer.setSpacing(15);
