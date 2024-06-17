@@ -71,9 +71,9 @@ Este repositório possui as seguintes branches:
 
 ## Interface Gráfica
 
-### FXML e Controlador
-- Explique o que é um arquivo FXML e seu papel na definição da interface gráfica.
-- Descreva o controlador associado ao arquivo FXML, que gerencia a interação entre a interface gráfica e a lógica do aplicativo.
+### JavaFX e Controlador
+- Explique o que é um arquivo JavaFX e seu papel na definição da interface gráfica.
+- Descreva o controlador associado ao arquivo JavaFX, que gerencia a interação entre a interface gráfica e a lógica do aplicativo.
 
 ## Demonstração Prática
 - Mostre a execução da aplicação.
