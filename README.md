@@ -49,7 +49,7 @@ Este repositório possui as seguintes branches:
 ## Estrutura do Projeto JavaFX
 
 ### Pacotes e Arquivos
-- Descreva a organização dos pacotes, como `controller`, `model`, `view`, e `dao`.
+- Descreva a organização dos pacotes, como `controller`.
 - Explique brevemente o propósito de cada pacote.
 
 ### Classe Principal
