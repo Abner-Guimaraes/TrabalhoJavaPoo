@@ -25,6 +25,3 @@ Antes de fundir qualquer alteração nesta branch com a branch principal (normal
 
 Se tiver dúvidas ou sugestões relacionadas ao desenvolvimento da interface gráfica, sinta-se à vontade para entrar em contato com a equipe de desenvolvimento responsável por esta branch.
 
-![Diagrama da Interface Gráfica (Diagrama UML)](https://github.com/Abner-Guimaraes/TrabalhoJavaPoo/blob/TOO-2-Interface-Gr%C3%A1fica/DiagramaUML/DiagramaTOO2.png)
-
-
