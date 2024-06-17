@@ -21,6 +21,7 @@ public class ScreenFx extends Application {
     private Stage tela;
     private TableView<Produtos> tabela;
     private static final int LINHAS_POR_PAGINA = 10;
+
     private TextField nomeInput;
     private TextField descricaoInput;
     private TextField marcaInput;

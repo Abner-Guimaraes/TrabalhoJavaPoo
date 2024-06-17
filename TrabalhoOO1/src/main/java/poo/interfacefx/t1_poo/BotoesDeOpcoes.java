@@ -21,6 +21,7 @@ public class BotoesDeOpcoes extends HBox {
         });
 
         deletarBtn.setOnAction(_ -> {
+
             screenFx.deletarProduto(BotoesModal.deleteModal("Deletar"),produto);
         });
 

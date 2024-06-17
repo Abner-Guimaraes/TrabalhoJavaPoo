@@ -2,7 +2,10 @@ package poo.interfacefx.t1_poo;
 
 public class Produtos {
     private String nome,descricao , marca , categoria;
+    private int id;
     private Double preco, custo;
+
+
 
     public Produtos() {
        this("","","","",0,0);
@@ -10,6 +13,7 @@ public class Produtos {
 
     public Produtos(String nome, String descricao, String marca, String categoria,
                     double preco,double custo){
+
         this.nome = nome;
         this.descricao = descricao;
         this.marca = marca;
@@ -18,6 +22,14 @@ public class Produtos {
         this.custo = custo;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNome() {
         return nome;
     }
