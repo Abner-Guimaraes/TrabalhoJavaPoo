@@ -28,3 +28,69 @@ Este repositório possui as seguintes branches:
 3. **TOO-3-MySQL**: Contém os códigos SQL para criação e manipulação da tabela de produtos no banco de dados.
 4. **TOO-22-Back-endIG**: Contém os códigos para a conexão do banco de dados com a tabela e as funções CRUD.
 
+Claro, aqui está um guia em texto sem os códigos, focado nos pontos que seu colega deve abordar no vídeo explicativo:
+
+---
+
+# Guia para Vídeo Explicativo: Interface Gráfica em JavaFX com MySQL
+
+## Introdução
+- **Apresentação do tema**: Explique que o objetivo do projeto é desenvolver uma interface gráfica utilizando JavaFX que se conecta a um banco de dados MySQL.
+- **Objetivo do vídeo**: O vídeo deve mostrar como o código permite criar, atualizar, deletar e visualizar produtos em uma tabela.
+
+## Configuração do Ambiente
+
+### Instalação do JavaFX
+- Explique a importância de adicionar as bibliotecas do JavaFX ao projeto.
+- Mostre como fazer isso no ambiente de desenvolvimento integrado (IDE) utilizado (por exemplo, IntelliJ ou Eclipse).
+
+### Configuração do MySQL
+- Explique como instalar o MySQL no sistema.
+- Demonstre como criar o banco de dados e a tabela de produtos necessária para o projeto.
+
+## Estrutura do Projeto JavaFX
+
+### Pacotes e Arquivos
+- Descreva a organização dos pacotes, como `controller`, `model`, `view`, e `dao`.
+- Explique brevemente o propósito de cada pacote.
+
+### Classe Principal
+- Apresente a classe principal que inicia a aplicação JavaFX.
+- Descreva o papel dessa classe na aplicação.
+
+## Conexão com o Banco de Dados
+- Explique a classe responsável pela conexão com o banco de dados MySQL.
+- Enfatize a importância de configurar corretamente as credenciais de acesso ao banco de dados.
+
+## Operações CRUD
+
+### Modelo de Produto
+- Descreva a classe que representa o modelo de produto.
+- Explique os atributos principais da classe, como `id`, `nome`, `preco`, e `quantidade`.
+
+### DAO de Produto
+- Explique a função da classe DAO (Data Access Object) em realizar operações no banco de dados.
+- Descreva brevemente as operações CRUD (Create, Read, Update, Delete) que essa classe realiza.
+
+## Interface Gráfica
+
+### FXML e Controlador
+- Explique o que é um arquivo FXML e seu papel na definição da interface gráfica.
+- Descreva o controlador associado ao arquivo FXML, que gerencia a interação entre a interface gráfica e a lógica do aplicativo.
+
+## Demonstração Prática
+- Mostre a execução da aplicação.
+- Demonstre cada funcionalidade da aplicação: criar, atualizar, deletar e listar produtos.
+
+## Conclusão
+- Resuma os principais pontos abordados no vídeo.
+- Faça um encerramento destacando possíveis próximos passos ou melhorias futuras.
+
+## Referências
+- Recomende a documentação oficial do JavaFX: [https://openjfx.io/](https://openjfx.io/)
+- Sugira a documentação do MySQL: [https://dev.mysql.com/doc/](https://dev.mysql.com/doc/)
+
+---
+
+Esse guia cobre os pontos principais que seu colega deve abordar no vídeo explicativo sobre o projeto JavaFX com MySQL. Ele oferece uma estrutura clara para que todas as partes importantes do projeto sejam bem explicadas.
+
