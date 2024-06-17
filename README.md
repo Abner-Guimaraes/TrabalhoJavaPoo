@@ -53,7 +53,7 @@ Este repositório possui as seguintes branches:
 - Explique brevemente o propósito de cada pacote.
 
 ### Classe Principal
-- Apresente a classe principal que inicia a aplicação JavaFX.
+- Apresente a classe principal que inicia a aplicação JavaFX(ProdutosControlador)
 - Descreva o papel dessa classe na aplicação.
 
 ## Conexão com o Banco de Dados
