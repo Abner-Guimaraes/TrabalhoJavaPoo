@@ -22,16 +22,6 @@ public class ProdutosControlador {
         getProdutos();
     }
 
-    private void carregarProdutosIniciais() {
-//        for (int i = 0; i < 10; i++) {
-//            produtos.add(new Produtos("Televisão", "Lorem ipsum",
-//                    "Samsung", "Eletrodomésticos", 1200.00,
-//                    500.00));
-//            produtos.add(new Produtos("Play Station 5", "Lorem ipsum", "Sony",
-//                    "Eletrodomésticossssssssssssssssssssssssssssssssssssssssssssss",
-//                    5000.00, 2500.00));
-//        }
-    }
 
     public ObservableList<Produtos> getProdutos() {
         String sql = "SELECT * FROM produtos_table";
