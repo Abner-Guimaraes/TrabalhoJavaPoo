@@ -28,8 +28,6 @@ Este repositório possui as seguintes branches:
 3. **TOO-3-MySQL**: Contém os códigos SQL para criação e manipulação da tabela de produtos no banco de dados.
 4. **TOO-22-Back-endIG**: Contém os códigos para a conexão do banco de dados com a tabela e as funções CRUD.
 
-Claro, aqui está um guia em texto sem os códigos, focado nos pontos que seu colega deve abordar no vídeo explicativo:
-
 ---
 
 # Guia para Vídeo Explicativo: Interface Gráfica em JavaFX com MySQL
