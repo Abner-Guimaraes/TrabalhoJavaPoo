@@ -89,6 +89,3 @@ Este repositório possui as seguintes branches:
 - Sugira a documentação do MySQL: [https://dev.mysql.com/doc/](https://dev.mysql.com/doc/)
 
 ---
-
-Esse guia cobre os pontos principais que seu colega deve abordar no vídeo explicativo sobre o projeto JavaFX com MySQL. Ele oferece uma estrutura clara para que todas as partes importantes do projeto sejam bem explicadas.
-
