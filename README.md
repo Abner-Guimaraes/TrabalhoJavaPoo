@@ -11,7 +11,7 @@ O objetivo desta branch é desenvolver e iterar sobre a interface gráfica da ap
 - Implementação dos componentes gráficos da interface, como botões, campos de texto, tabelas, etc.
 - Definição e aplicação de estilos visuais consistentes para garantir uma aparência profissional.
 - Integração da lógica de interface com a lógica de negócios da aplicação.
-- Testes de usabilidade para garantir que a interface atenda às necessidades dos usuários finais.
+- Testes de usabilidade para garantir que a interface atenda às necessidades dos usuários finais
 
 ## Contribuições
 
