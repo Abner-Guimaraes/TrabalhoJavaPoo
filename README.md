@@ -27,6 +27,13 @@ Este repositório possui as seguintes branches:
 2. **TOO-2-Interface-Gráfica**: Contém os códigos em JavaFX da interface gráfica.
 3. **TOO-3-MySQL**: Contém os códigos SQL para criação e manipulação da tabela de produtos no banco de dados.
 
+## Integrantes do Projeto
+- **Felipe Araújo Correia**
+- **Abner Gomes Guimarães**
+- **Marcelo Bernardino da Silva Júnior**
+- **Sofia Cabral Marcelino**
+- **Caio Henrique Costa de Matos**
+
 ---
 
 # Guia para Vídeo Explicativo: Interface Gráfica em JavaFX com MySQL
@@ -52,7 +59,7 @@ Este repositório possui as seguintes branches:
 - Explique brevemente o propósito de cada pacote.
 
 ### Classe Principal
-- Apresente a classe principal que inicia a aplicação JavaFX(ProdutosControlador)
+- Apresente a classe principal que inicia a aplicação JavaFX.
 - Descreva o papel dessa classe na aplicação.
 
 ## Conexão com o Banco de Dados
@@ -86,5 +93,3 @@ Este repositório possui as seguintes branches:
 ## Referências
 - Recomende a documentação oficial do JavaFX: [https://openjfx.io/](https://openjfx.io/)
 - Sugira a documentação do MySQL: [https://dev.mysql.com/doc/](https://dev.mysql.com/doc/)
-
----
